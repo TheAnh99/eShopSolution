@@ -7,17 +7,19 @@ using System.Text;
 
 namespace eShopSolution.Data.Configurations
 {
-    public class TransactionConfiguration : IEntityTypeConfiguration<Transaction>
+    public class CartConfiguration : IEntityTypeConfiguration<Cart>
     {
-        public void Configure(EntityTypeBuilder<Transaction> builder)
+        public void Configure(EntityTypeBuilder<Cart> builder)
         {
-            builder.ToTable("Transactions");
-
+            builder.ToTable("Carts");
             builder.HasKey(x => x.Id);
 
             builder.Property(x => x.Id).UseIdentityColumn();
 
-            builder.HasOne(x => x.AppUser).WithMany(x => x.Transactions).HasForeignKey(x => x.UserId);
+
+            builder.HasOne(x => x.Product).WithMany(x => x.Carts).HasForeignKey(x => x.ProductId);
+            builder.HasOne(x => x.AppUser).WithMany(x => x.Carts).HasForeignKey(x => x.UserId);
+
         }
     }
 }
