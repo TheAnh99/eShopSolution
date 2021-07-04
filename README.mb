@@ -1,3 +1,6 @@
 #HOANG THE ANH ASP.NET CORE 
 - ASP .NET CORE 3.14
 - ENTITY FAMEWORK .NET CORE 3.14
+- Microsoft.EntityFrameworkCore.SqlServer
+- Microsoft.EntityFrameworkCore.Design
+- Microsoft.EntityFrameworkCore.Tools
